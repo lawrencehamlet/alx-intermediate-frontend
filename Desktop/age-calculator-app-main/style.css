@@ -1,0 +1,255 @@
+/* Font Faces for Poppins */
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+/* style.css - Main stylesheet based on style-guide.md */
+
+:root {
+  /* Primary Colors */
+  --purple: hsl(259, 100%, 65%);
+  --light-red: hsl(0, 100%, 67%);
+
+  /* Neutral Colors */
+  --white: hsl(0, 0%, 100%);
+  --off-white: hsl(0, 0%, 94%);
+  --light-grey: hsl(0, 0%, 86%);
+  --smokey-grey: hsl(0, 1%, 44%);
+  --off-black: hsl(0, 0%, 8%);
+
+  /* Typography */
+  --font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  --font-size-input: 32px;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--off-white);
+  color: var(--off-black);
+  margin: 0;
+  padding: 0;
+}
+
+input, select, textarea {
+  font-family: var(--font-family);
+  font-size: var(--font-size-input);
+  color: var(--off-black);
+  background: var(--white);
+  border: 1px solid var(--light-grey);
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--purple);
+}
+
+label {
+  color: var(--smokey-grey);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.button, button, input[type="submit"] {
+  background: var(--purple);
+  color: var(--white);
+  font-family: var(--font-family);
+  font-weight: 700;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75em 2em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.button:hover, button:hover, input[type="submit"]:hover {
+  background: var(--light-red);
+}
+
+.error {
+  display: block;
+  color: var(--light-red);
+  font-size: 0.9em;
+  font-style: italic;
+  margin-top: 0.25em;
+  min-height: 1.2em;
+  visibility: visible;
+}
+
+.error:empty {
+  visibility: hidden;
+}
+
+.age-calc-container {
+  background: var(--white);
+  max-width: 540px;
+  margin: 4rem auto 2rem auto;
+  border-radius: 24px 24px 120px 24px;
+  box-shadow: 0 4px 32px 0 rgba(44, 44, 44, 0.10);
+  padding: 2.5rem 2rem 3.5rem 2rem;
+}
+
+.age-calc-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.input-group {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+  flex: 1 1 0;
+}
+
+.input-field label {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.25rem;
+}
+
+.input-field input {
+  font-size: var(--font-size-input);
+  padding: 0.5em 0.75em;
+  border-radius: 8px;
+  border: 1.5px solid var(--light-grey);
+  font-weight: 700;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.input-field input:focus {
+  border-color: var(--purple);
+}
+
+.submit-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: -2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.button {
+  background: var(--purple);
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px 0 rgba(44, 44, 44, 0.10);
+  border: none;
+  transition: background 0.2s;
+}
+
+.button:hover, .button:focus {
+  background: var(--off-black);
+}
+
+.arrow-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.age-result {
+  font-size: 3.5rem;
+  font-weight: 800;
+  font-style: italic;
+  line-height: 1.1;
+  color: var(--off-black);
+  margin-top: 0.5rem;
+}
+
+.age-value {
+  color: var(--purple);
+  letter-spacing: 0.05em;
+  font-style: italic;
+  font-weight: 800;
+}
+
+.input-error {
+  border-color: var(--light-red) !important;
+}
+
+@media (max-width: 375px) {
+  body {
+    font-size: 14px;
+  }
+  input, select, textarea {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    font-size: 18px;
+  }
+  input, select, textarea {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .age-calc-container {
+    padding: 1.5rem 0.5rem 2.5rem 0.5rem;
+    max-width: 95vw;
+    border-radius: 16px 16px 80px 16px;
+  }
+  .age-result {
+    font-size: 2.2rem;
+  }
+  .button {
+    width: 56px;
+    height: 56px;
+  }
+  .arrow-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
