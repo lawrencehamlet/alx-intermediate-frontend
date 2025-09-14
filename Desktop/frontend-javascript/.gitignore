@@ -1,5 +1,0 @@
-# Ignore all config files
-**/.eslintrc.js
-**/package.json
-**/tsconfig.json
-**/webpack.config.js
