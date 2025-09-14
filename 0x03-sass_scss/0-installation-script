@@ -1,0 +1,51 @@
+Steps I took to install SASS (Dart Sass) on Windows
+
+1. Open a PowerShell terminal (pwsh.exe) as your normal user or Administrator if you prefer.
+
+2. Verify Node.js and npm are installed (Sass via npm requires Node.js):
+
+   - node --version
+   - npm --version
+
+   If Node.js is not installed, download it from https://nodejs.org/ and install the LTS version, or use a package manager like Chocolatey: `choco install nodejs-lts` (run PowerShell as Administrator for Chocolatey).
+
+3. Install Dart Sass globally using npm so you can run `sass` from any folder:
+
+   - npm install -g sass
+
+   If you prefer not to install globally, add it to a project as a devDependency instead:
+
+   - npm init -y
+   - npm install --save-dev sass
+
+4. Verify the `sass` command is available and check its version:
+
+   - sass --version
+
+   You should see output like: `1.XX.X compiled with dart2js ...` or `1.XX.X`.
+
+5. Basic usage example (compile a file to CSS):
+
+   - sass source.scss output.css
+
+   For continuous watching during development:
+
+   - sass --watch source.scss:output.css
+
+6. If `npm install -g sass` fails due to permissions on Windows, you can either:
+
+   - Re-run PowerShell as Administrator and retry the `npm install -g sass` command, or
+   - Use the project-local devDependency approach (recommended for project reproducibility), or
+   - Configure npm global directory for your user to avoid needing Administrator privileges.
+
+7. Optional: Using the standalone executable (if you don't want Node/npm):
+
+   - Download the prebuilt Dart Sass executable for Windows from the official sass-lang site: https://github.com/sass/dart-sass/releases
+   - Unzip and place the `sass.bat` / `sass` executable into a folder on your PATH.
+
+8. Notes and troubleshooting:
+   - On Windows, ensure your PATH includes the npm global bin directory (typically `%APPDATA%\npm`). If `sass` isn't found after a global install, add that directory to PATH or restart your terminal.
+   - If you use WSL, install Node/npm/Sass inside the WSL environment rather than Windows, and run commands from there.
+   - For automated builds or CI, prefer installing `sass` as a devDependency and running it from npm scripts (e.g., `"build-css": "sass scss:css --no-source-map"`).
+
+End of steps.
